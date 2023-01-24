@@ -1,5 +1,7 @@
 using Printf
 
-name :: String = "John"
-is_john :: Bool = name == "John" ? true : false
-println(is_john)
+i = 0
+while i <= 5
+    print(string(i, ", "))
+    global i += 1
+end

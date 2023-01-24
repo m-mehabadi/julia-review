@@ -171,6 +171,54 @@ println(is_john)
 ```
 > true
 
+## Looping in Julia
+Julia has `for` loops and `while` loops which is presented below.
+
+### `for` loops
+Here are some examples of using `for` loop:
+```julia
+using Printf
+
+# for with range
+for i = 1:5
+    print(string(i, ", "))
+end
+println()
+
+# iterate in arrays
+for i in [10, 100, 1000]
+    print(string(i, ", "))
+end
+println()
+
+# joint iteration
+for i = 1:3, j in [10, 100, 1000]
+    print(string((i, j)), ", ")
+end
+println()
+```
+> 1, 2, 3, 4, 5,  
+10, 100, 1000,  
+(1, 10), (1, 100), (1, 1000), (2, 10), (2, 100), (2, 1000), (3, 10), (3, 100), (3, 1000),  
+
+### `while` loops
+Here is an example `while` loop:
+```julia
+using Printf
+
+i = 0
+while i <= 5
+    print(string(i, ", "))
+    global i += 1
+end
+```
+> 0, 1, 2, 3, 4, 5,
+
+A few important notes:
+- `global` keyword must be used before the variable inside `while` so that `i` will be the same as the `i` outside of `while`.
+- The `continue` keywork can be used to skip the remaining code in the loop and go to the next iteration.
+- The `break` keywork can be used to break out of the loop.
+
 ## Functions
 In the simplest way, functions can be defined and called as follows. Please note that the indentation inside the function body is **not required** as it is in Python. The indentation is however used for better readibility.
 ```julia
@@ -182,5 +230,6 @@ end
 
 helloWorld()
 ```
+> Hello World!
 
 [^1]: https://en.wikibooks.org/wiki/Introducing_Julia/Types
