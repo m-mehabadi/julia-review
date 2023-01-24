@@ -66,12 +66,12 @@ println(c)
 c2 :: String = string(12.31)
 println(c2)
 ```
-> d
-> 100
-> 2
-> 1231.0
-> 2.141
-> 12.31
+> d  
+100  
+2  
+1231.0  
+2.141  
+12.31  
 
 ## Basic `String` operations
 Following is an example code depicting some basic operations with strings:
@@ -108,18 +108,18 @@ This is the second line.
 """
 println(s3)
 ```
->10
-Size of string 's' is 10
-The sum of 2 and 3 is 5
-H
-!
-ello
-Hello you!, What is your name?
-Hello you!, What is your name?
-false
-true
-This is a multi-line string.
-This is the second line.
+>10  
+Size of string 's' is 10  
+The sum of 2 and 3 is 5  
+H  
+!  
+ello  
+Hello you!, What is your name?  
+Hello you!, What is your name?  
+false  
+true  
+This is a multi-line string.  
+This is the second line.  
 
 ## Functions
 In the simplest way, functions can be defined and called as follows. Please note that the indentation inside the function body is **not required** as it is in Python. The indentation is however used for better readibility.
