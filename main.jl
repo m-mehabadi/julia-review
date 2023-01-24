@@ -1,25 +1,23 @@
 using Printf
 
-# Int to Char
-a1 :: Char = Char(100)
-println(a1)
+x :: Int = 100
+y :: Int = 50
+z :: Int = 10
 
-# Char to Int
-a2 :: Int = Int(a1)
-println(a2)
+if x == y
+    println("x is equal to y.")
+end
 
-# Float to Int
-b :: Int = Int(trunc(2.713))
-println(b)
+if x < y
+    println("x is less than y.")
+else
+    println("x is bigger than y.")
+end
 
-# Int to Float
-b2 :: Float32 = Float32(1231)
-println(b2)
-
-# String to Number
-c :: Float32 = parse(Float32, "2.141")
-println(c)
-
-# Number to String
-c2 :: String = string(12.31)
-println(c2)
+if y < z
+    println("y is less than z")
+elseif y >= z && x < z
+    println("y is bigger than z and x is less than z")
+else
+    println("z is smaller than x and y")
+end
