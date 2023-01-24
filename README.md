@@ -29,7 +29,7 @@ The following is a list of primitive types in Julia:
   - `AbstractFloat` is the abstract float which can be of any size. `Float16`, `Float32`, `Float64` are float types with specific sizes.
 - Character types:
   - `Char` is a single char such as `'a'`. Characters in Julia must be surrounded with single qoutes.
-  - `String` is a string of chars such as `"Hello!"`
+  - `String` is a string of chars such as `"Hello!"`. In Julia, double qoutation **must** be used with strings.
 - Boolean type which is with `Bool`.
 
 Finally, the following figure shows the number types hierarchy in Julia:
@@ -66,6 +66,60 @@ println(c)
 c2 :: String = string(12.31)
 println(c2)
 ```
+>d
+100
+2
+1231.0
+2.141
+12.31
+
+## Basic `String` operations
+Following is an example code depicting some basic operations with strings:
+```julia
+using Printf
+
+s = "Hello you!"
+
+# String size
+println(length(s))
+
+# String interpolation
+println("Size of string 's' is $(length(s))")
+println("The sum of 2 and 3 is $(2+3)")
+
+# String indexing
+println(s[1]) # the first Char in string
+println(s[end]) # the last Char in string
+println(s[2:5]) # string slicing
+
+# String concatenation
+s2 = "What is your name?"
+println(s * ", " * s2)
+println(string(s, ", ", s2))
+
+# String comparisons
+println("Tokyo" == "London")
+println("Tokyo" != "London")
+
+# Multi-line strings
+s3 = """
+This is a multi-line string.
+This is the second line.
+"""
+println(s3)
+```
+>10
+Size of string 's' is 10
+The sum of 2 and 3 is 5
+H
+!
+ello
+Hello you!, What is your name?
+Hello you!, What is your name?
+false
+true
+This is a multi-line string.
+This is the second line.
 
 ## Functions
 In the simplest way, functions can be defined and called as follows. Please note that the indentation inside the function body is **not required** as it is in Python. The indentation is however used for better readibility.
