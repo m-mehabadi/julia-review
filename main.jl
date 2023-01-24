@@ -1,7 +1,8 @@
 using Printf
 
-i = 0
-while i <= 5
-    print(string(i, ", "))
-    global i += 1
+function hello(name::String="World")
+    println("Hello " * name * "!")
 end
+
+hello()
+hello("John Doe")
