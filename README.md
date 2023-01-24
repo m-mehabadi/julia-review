@@ -130,16 +130,19 @@ x :: Int = 100
 y :: Int = 50
 z :: Int = 10
 
+# Example of only if
 if x == y
     println("x is equal to y.")
 end
 
+# Example of if-else
 if x < y
     println("x is less than y.")
 else
     println("x is bigger than y.")
 end
 
+# Example of if-elseif-else
 if y < z
     println("y is less than z")
 elseif y >= z && x < z
@@ -150,6 +153,23 @@ end
 ```
 > x is bigger than y.  
 z is smaller than x and y  
+
+### Logical operators
+The basic logical operators include:
+- `!` negates a logical statement.
+- `&&` is the logical **and** between two logical statements
+- `||` is the logical **or** between two logical statements
+
+### Ternary conditional expression
+Julia also supports ternary expressions. The following is an example:
+```julia
+using Printf
+
+name :: String = "John"
+is_john :: Bool = name == "John" ? true : false
+println(is_john)
+```
+> true
 
 ## Functions
 In the simplest way, functions can be defined and called as follows. Please note that the indentation inside the function body is **not required** as it is in Python. The indentation is however used for better readibility.
