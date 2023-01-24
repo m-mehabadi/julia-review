@@ -66,12 +66,12 @@ println(c)
 c2 :: String = string(12.31)
 println(c2)
 ```
->d
-100
-2
-1231.0
-2.141
-12.31
+> d
+> 100
+> 2
+> 1231.0
+> 2.141
+> 12.31
 
 ## Basic `String` operations
 Following is an example code depicting some basic operations with strings:
