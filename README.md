@@ -296,6 +296,59 @@ Hello John Doe!
 ### The `return` keyword
 Functions in julia don't necessarily have to have `return` keyword in their body. Julia functions return the evaluation of the last expression in their body. In the above example, `x + y` is the last statement in the function body and it will be evaluated as the sum of the input arguments and the evaluation will be returned. However the `return` keyword can also be added. Also note that:
 - If there are multiple places that a function might return, then you **have to** use `return`.
-- If the function is not supposed to return anything, either of `return nohting` or `return` or `nothing` can be used as the last statement.
+- If the function is not supposed to return anything, either of `return nothing` or `return` or `nothing` can be used as the last statement.
+
+## Julia data structures
+Julia data structures include `Arrays`, `Tuples`, `Dictionaries`, `Sets`. There are also other iteratables like Range instances.
+
+### Arrays
+Arrays in Julia are can be `N` dimensional. `Array{T, N}` is an `N` dimensional array where its elements are of type `T`. The `Vector{T}` is an alias for one-dimensional arrays where `N=1` and The `Matrix{T}` is an alias for two-dimensional arrays where `N=2`.
+
+### Vectors: one-dimensional arrays
+One dimensional arrays, i.e. vectors, can also act as simple lists in python. Vectors are dinamically sized, therefore they can be pushed into or popped from after their definition. Following are some examples of Vectors:
+```julia
+using Printf
+
+# Empty 1-dim array with floating point elements
+a = Float64[]
+a2 = Array{Float64, 1}(undef, 0)
+a3 = Array{Float64}(undef, 0)
+a4 = Vector{Float64}(undef, 0)
+println(a)
+println(a2)
+println(a3)
+println(a4)
+
+# Operations with vectors
+# push
+for i in 1:5
+    push!(a, 10*Float64(i))
+end
+println(a)
+
+# pop
+b = pop!(a)
+println("b=$b popped from a=$a")
+
+# indexing and slicing
+println(a[1])
+println(a[end])
+println(a[2:3])
+
+# checking if vector contains an element
+println(20 in a)
+println(35.5 in a)
+```
+> Float64[]  
+Float64[]  
+Float64[]  
+Float64[]  
+[10.0, 20.0, 30.0, 40.0, 50.0]  
+b=50.0 popped from a=[10.0, 20.0, 30.0, 40.0]  
+10.0  
+40.0  
+[20.0, 30.0]  
+true  
+false  
 
 [^1]: https://en.wikibooks.org/wiki/Introducing_Julia/Types
